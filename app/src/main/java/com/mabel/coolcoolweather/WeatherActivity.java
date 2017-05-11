@@ -22,6 +22,7 @@ import com.mabel.coolcoolweather.R;
 import com.bumptech.glide.Glide;
 import com.mabel.coolcoolweather.gson.Forecast;
 import com.mabel.coolcoolweather.gson.Weather;
+import com.mabel.coolcoolweather.service.AutoUpdateService;
 import com.mabel.coolcoolweather.util.HttpUtil;
 import com.mabel.coolcoolweather.util.Utility;
 
@@ -231,6 +232,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
 }
